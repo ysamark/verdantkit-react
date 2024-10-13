@@ -1,5 +1,3 @@
-"use client";
-
 import { generateRandomId, noEmpty, Nullish } from "@verdantkit/utils";
 import { Fragment, isValidElement } from "react";
 import { FaCopy } from "react-icons/fa6";

@@ -1,5 +1,3 @@
-"use client";
-
 import { AlertDialog } from "./components/AlertDialog";
 import { ApplicationContextWrapper } from "./components/ApplicationContextWrapper";
 import { FormDialog } from "./components/FormDialog";

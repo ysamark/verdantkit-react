@@ -1,5 +1,3 @@
-"use client";
-
 import { noEmpty } from "@verdantkit/utils";
 
 import { EmptyListFallback } from "./components/EmptyListFallback";

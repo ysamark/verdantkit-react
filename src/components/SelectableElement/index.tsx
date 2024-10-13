@@ -1,5 +1,3 @@
-"use client";
-
 import { ElementType } from "react";
 
 import { SelectedElementId } from "@components/SelectableArea/types";

@@ -25,9 +25,9 @@ Some components are included, such as:
 - [] ContextMenu
 - [] FloatingAction
 - [] ?DockedContainer
-- [] AsideMenu
-  - [] AsideMenuButton
-  - [] AsideMenuContent
+- [x] SideMenu
+  - [x] SideMenuButton
+  - [x] SideMenuContent
 - [] AuthenticationContext.*
 - [] EntityCard
 - [] (NEW) EntityCardsWrapper

@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn vitest run
-# yarn lint
+# npm test
+# npm run lint

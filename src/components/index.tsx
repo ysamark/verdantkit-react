@@ -14,4 +14,5 @@ export * from "./ScrollArea";
 export * from "./SelectableArea";
 export * from "./SelectableAreaContainer";
 export * from "./SelectableElement";
+export * from "./SideMenu";
 export * from "./Spinner";

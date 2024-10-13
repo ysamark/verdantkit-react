@@ -46,10 +46,8 @@ export const SelectableAreaContainer = forwardRef<
         return;
       }
 
-      const { width, height, x, y } = getSelectCursorCoordinates(
-        event,
-        selectCursorAxisState.current.state
-      );
+      const { width, height, ...cursorCoordinates } =
+        getSelectCursorCoordinates(event, selectCursorAxisState.current.state);
 
       const selectCursor = resolveSelectCursorSizes({
         height,
@@ -57,9 +55,14 @@ export const SelectableAreaContainer = forwardRef<
         cursorStyle,
       });
 
+      if (cursorStyle === "radial") {
+        cursorCoordinates.x -= selectCursor.width / 2;
+        cursorCoordinates.y -= selectCursor.height / 2;
+      }
+
       Object.assign(selectCursorElementRef.current.style, {
-        top: `${y}px`,
-        left: `${x}px`,
+        top: `${cursorCoordinates.y}px`,
+        left: `${cursorCoordinates.x}px`,
         width: `${selectCursor.width}px`,
         height: `${selectCursor.height}px`,
       });

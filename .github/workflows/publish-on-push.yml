@@ -50,6 +50,9 @@ jobs:
       #   env:
       #     NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
 
+      - name: Run tests
+        run: yarn test
+
       - name: Build the Package
         run: yarn build
 

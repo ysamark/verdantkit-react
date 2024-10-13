@@ -13,7 +13,7 @@
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "bugs": {
     "url": "https://github.com/ysamark/verdantkit-react/issues",

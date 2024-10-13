@@ -14,7 +14,18 @@ const pathAliases = pathsToModuleAliases(compilerOptions.paths, {
 });
 
 export default defineConfig({
-  plugins: [react(), dts(), tsConfigPaths()],
+  plugins: [
+    react(),
+    dts({
+      include: ["./src"],
+      outDir: "dist",
+      // insertTypesEntry: true,
+      rollupTypes: false,
+      tsconfigPath: "tsconfig.app.json",
+      exclude: ["node_modules"],
+    }),
+    tsConfigPaths(),
+  ],
 
   test: {
     alias: pathAliases as AliasOptions,
@@ -47,16 +58,17 @@ export default defineConfig({
       name: "@verdantkit/react",
       fileName: (format) => `index.${format}.js`,
     },
-    rollupOptions: {
-      external: ["react", "react-dom"],
-      output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-        },
-      },
-    },
+    // rollupOptions: {
+    //   external: ["react", "react-dom"],
+    //   output: {
+    //     globals: {
+    //       react: "React",
+    //       "react-dom": "ReactDOM",
+    //     },
+    //   },
+    // },
     sourcemap: true,
     emptyOutDir: true,
+    copyPublicDir: false,
   },
 });

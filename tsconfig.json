@@ -7,8 +7,9 @@
 
   "compilerOptions": {
     "baseUrl": "./src",
+    "outDir": "./dist",
     "paths": {      
       "@/*": ["./*"]
-    }
+    },
   }
 }

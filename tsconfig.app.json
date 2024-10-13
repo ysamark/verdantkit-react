@@ -6,6 +6,10 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    "declaration": true,
+    "declarationDir": "./dist",
+    "declarationMap": true,
+
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
@@ -19,6 +23,7 @@
     "noFallthroughCasesInSwitch": true,
 
     "baseUrl": "./src",
+    "outDir": "./dist",
     "paths": {
       "~/*": [
         "./*"
@@ -49,5 +54,6 @@
       ]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

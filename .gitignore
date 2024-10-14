@@ -11,8 +11,6 @@ node_modules
 coverage
 dist/**/*
 !dist/.gitkeep
-docs/**/*
-!docs/.gitkeep
 dist-ssr
 *.local
 

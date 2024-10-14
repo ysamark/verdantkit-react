@@ -91,7 +91,7 @@ export const SideMenuContent = forwardRef<HTMLDivElement, SideMenuContentProps>(
         >
           {sideMenuSections[0]}
           <ScrollArea className="flex w-full flex-grow flex-col">
-            {rest}
+            <div className="w-full flex flex-col pr-4">{rest}</div>
           </ScrollArea>
           {sideMenuSections[1]}
         </div>

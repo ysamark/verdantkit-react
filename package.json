@@ -7,13 +7,14 @@
   "main": "dist/index.es.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && yarn build:tailwind",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "test": "vitest run"
+    "build:storybook": "storybook build",
+    "test": "vitest run",
+    "build:tailwind": "tailwindcss -m -i ./src/assets/stylesheet/globals.css -o ./dist/styles.css"
   },
   "bugs": {
     "url": "https://github.com/ysamark/verdantkit-react/issues",
@@ -38,7 +39,14 @@
     }
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./styles.css": {
+      "require": "./dist/styles.css",
+      "default": "./dist/styles.css"
+    }
   },
   "files": [
     "dist",

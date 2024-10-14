@@ -1,10 +1,10 @@
 import { withThemeByClassName } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react";
-import { initialize, mswLoader } from "msw-storybook-addon";
+// import { initialize, mswLoader } from "msw-storybook-addon";
 
 import "../src/assets/stylesheet/globals.css";
 
-initialize();
+// initialize();
 
 Object.assign(global, {
   process: {
@@ -22,7 +22,9 @@ const preview: Preview = {
     },
   },
 
-  loaders: [mswLoader],
+  loaders: [
+    // mswLoader
+  ],
 
   decorators: [
     withThemeByClassName({

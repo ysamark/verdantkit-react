@@ -7,6 +7,7 @@ import dts from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 
+import { peerDependencies } from "./package.json";
 import { compilerOptions } from "./tsconfig.app.json";
 
 const pathAliases = pathsToModuleAliases(compilerOptions.paths, {
@@ -19,7 +20,7 @@ export default defineConfig({
     dts({
       include: ["./src"],
       outDir: "dist",
-      // insertTypesEntry: true,
+      insertTypesEntry: true,
       rollupTypes: false,
       tsconfigPath: "tsconfig.app.json",
       exclude: ["node_modules"],
@@ -58,15 +59,15 @@ export default defineConfig({
       name: "@verdantkit/react",
       fileName: (format) => `index.${format}.js`,
     },
-    // rollupOptions: {
-    //   external: ["react", "react-dom"],
-    //   output: {
-    //     globals: {
-    //       react: "React",
-    //       "react-dom": "ReactDOM",
-    //     },
-    //   },
-    // },
+    rollupOptions: {
+      external: Object.keys(peerDependencies),
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+        },
+      },
+    },
     sourcemap: true,
     emptyOutDir: true,
     copyPublicDir: false,

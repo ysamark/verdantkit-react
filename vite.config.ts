@@ -33,12 +33,12 @@ export default defineConfig({
     environment: "node",
     include: ["src/**/*.test.ts", "src/**/*.spec.ts"],
     setupFiles: ["./src/tests/setup.ts"],
-    browser: {
-      name: "chrome",
-      enabled: true,
-      headless: true,
-      provider: "webdriverio",
-    },
+    // browser: {
+    //   name: "chrome",
+    //   enabled: true,
+    //   headless: true,
+    //   provider: "webdriverio",
+    // },
     env: {
       API_CLIENT_ID: "MyAPIClientId",
       API_SECRET_KEY: "MyAPISecretKey",
@@ -47,10 +47,10 @@ export default defineConfig({
       enabled: true,
       provider: "istanbul",
     },
-    environmentMatchGlobs: [
-      ["src/**/*.test.ts", "node"],
-      ["src/**/*.spec.ts", "happy-dom"],
-    ],
+    // environmentMatchGlobs: [
+    //   ["src/**/*.test.ts", "node"],
+    //   ["src/**/*.spec.ts", "happy-dom"],
+    // ],
   },
 
   build: {

@@ -1,6 +1,9 @@
 import { noEmpty, Nullish, Optional, stripStrAccents } from "@verdantkit/utils";
 import React, { isValidElement } from "react";
 
+export * from "./clickDoneOutOf";
+export * from "./colors";
+
 export const cn = (...args: Array<Nullish>) => {
   const classList: Array<string> = [];
 

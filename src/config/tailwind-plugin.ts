@@ -1,6 +1,7 @@
 import tailwindCssAnimate from "tailwindcss-animate";
 import plugin from "tailwindcss/plugin";
-import { colors } from "~/utils";
+
+import { colors } from "@utils/colors";
 
 export const VerdantKitTailwindPlugin = plugin(
   ({ addBase, addUtilities }) => {

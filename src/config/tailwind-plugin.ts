@@ -143,7 +143,7 @@ export const VerdantKitTailwindPlugin = plugin(
       },
     });
   },
-  () => ({
+  {
     darkMode: ["class"],
     theme: {
       extend: {
@@ -248,7 +248,7 @@ export const VerdantKitTailwindPlugin = plugin(
       },
     },
     plugins: [tailwindCssAnimate],
-  })
+  }
 );
 
 const tailwindPlugin = () => VerdantKitTailwindPlugin;

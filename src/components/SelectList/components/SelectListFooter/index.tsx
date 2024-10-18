@@ -76,7 +76,7 @@ export const SelectListFooter = () => {
         </button>
         <button
           type="button"
-          className="px-6 py-2 rounded-lg border-0 outline-none bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-zinc-50"
+          className="px-6 py-2 rounded-lg border-0 outline-none bg-primary-300 hover:bg-primary-400 active:bg-primary-500 text-zinc-50"
           onClick={selectButtonClickHandler}
         >
           Selecionar

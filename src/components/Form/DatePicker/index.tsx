@@ -1,5 +1,5 @@
 import { Nullable } from "@verdantkit/utils";
-import { Datepicker, DatepickerOptions } from "flowbite";
+import type { Datepicker, DatepickerOptions } from "flowbite";
 import { useRef, useState } from "react";
 
 type DatePickerProps = React.PropsWithRef<
@@ -20,19 +20,21 @@ export const DatePicker = (props: DatePickerProps) => {
       return;
     }
 
-    datePickerObjectRef.current =
-      datePickerObjectRef.current ||
-      new Datepicker(inputElement, props as DatepickerOptions);
+    import("flowbite").then(({ Datepicker }) => {
+      datePickerObjectRef.current =
+        datePickerObjectRef.current ||
+        new Datepicker(inputElement, props as DatepickerOptions);
 
-    const datePicker = datePickerObjectRef.current;
+      const datePicker = datePickerObjectRef.current;
 
-    if (!showDatePicker) {
-      datePicker.show();
-    } else {
-      datePicker.hide();
-    }
+      if (!showDatePicker) {
+        datePicker.show();
+      } else {
+        datePicker.hide();
+      }
 
-    setShowDatePicker(!showDatePicker);
+      setShowDatePicker(!showDatePicker);
+    });
   };
 
   const inputBlurHandler = () => {

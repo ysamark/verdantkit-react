@@ -19,7 +19,7 @@ export const SelectCursor = forwardRef<HTMLDivElement, SelectCursorProps>(
         ref={ref}
         className={cn(
           props.className,
-          "bg-pink-600 bg-opacity-15 border-solid border-[1px] border-pink-300 fixed z-[555]",
+          "bg-primary-600 bg-opacity-35 border-solid border-[1px] border-primary-300 fixed z-[555]",
           props.cursorStyle === "radial" ? "rounded-full" : "rounded-sm"
         )}
       />

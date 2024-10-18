@@ -102,6 +102,32 @@ export const VerdantKitTailwindPlugin = plugin(
       },
     });
 
+    addBase({
+      ".data-floating-label-input-element:not(:placeholder-shown) ~ label": {
+        top: "-5px",
+        opacify: ".7",
+        transform: "scale(.65)",
+      },
+
+      ".data-floating-label-input-element:not(:placeholder-shown)": {
+        "padding-top": "26px",
+        "font-size": ".85rem",
+        "line-height": ".95rem",
+      },
+
+      ".data-floating-label-input-element:focus ~ label": {
+        top: "-5px",
+        opacify: ".7",
+        transform: "scale(.65)",
+      },
+
+      ".data-floating-label-input-element:focus": {
+        "padding-top": "26px",
+        "font-size": ".85rem",
+        "line-height": ".95rem",
+      },
+    });
+
     addUtilities({
       "@keyframes slideToLeft": {
         "0%": {

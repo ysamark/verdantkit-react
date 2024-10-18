@@ -60,7 +60,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: Object.keys(peerDependencies),
+      external: [...Object.keys(peerDependencies), "flowbite"],
       output: {
         globals: {
           react: "React",

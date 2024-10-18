@@ -2427,6 +2427,14 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
+"@verdantkit/tailwind-plugin@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@verdantkit/tailwind-plugin/-/tailwind-plugin-1.0.0.tgz#7815f0451980d61e67c2207fc47b4c0b76077347"
+  integrity sha512-9k7Lu5wmrD2kMjom8GkB0lSHJhQCel7BN43dyhwoapeH88jhL0R82BZxwIM+kqEcXT3HCHzN2Gm6ksthyOD4YQ==
+  dependencies:
+    polished "^4.3.1"
+    tailwindcss-animate "^1.0.7"
+
 "@verdantkit/utils@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@verdantkit/utils/-/utils-1.1.0.tgz#dd90084d532425c980c3350ed56af61886aaaf7a"

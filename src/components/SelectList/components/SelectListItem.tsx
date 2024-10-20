@@ -75,7 +75,7 @@ export function SelectListItem<ListDataType = any>(
             className={cn(
               "size-6 rounded-full border-[1px] flex flex-row justify-center items-center border-solid border-zinc-400 dark:border-zinc-600",
               selectable.selected
-                ? "bg-blue-500 text-zinc-50 dark:text-inherit shadow-sm"
+                ? "bg-primary-300 text-zinc-50 dark:text-inherit shadow-sm"
                 : null
             )}
           >

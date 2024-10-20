@@ -5,3 +5,4 @@ export * from "./LongTextField";
 export * from "./DatePicker";
 export * from "./SelectField";
 export * from "./TagsField";
+export * from "./TextField";

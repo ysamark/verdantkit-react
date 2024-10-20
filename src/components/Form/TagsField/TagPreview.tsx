@@ -77,7 +77,7 @@ export const TagPreview: TagPreviewComponent = (props) => {
           <Fragment>
             {slag}
             <button
-              className="bg-zinc-300 hover:bg-zinc-400 active:bg-zinc-500 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:active:bg-zinc-700 border-0 outline-0 p-2 rounded-full text-sm mt-1"
+              className="bg-zinc-300 hover:bg-zinc-400 active:scale-95 transition-transform dark:bg-zinc-600 dark:hover:bg-zinc-500 border-0 outline-0 p-2 rounded-full text-sm mt-1"
               type="button"
               onClick={deleteButtonClickHandler}
             >

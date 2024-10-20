@@ -80,7 +80,7 @@ export const TagInput = () => {
       onKeyUp={inputKeyUpHandler}
       onFocus={() => context.focus()}
       onBlur={() => context.blur()}
-      className="ml-3 outline-0 bg-transparent border-0 text-xl font-light dark:text-zinc-50"
+      className="outline-0 bg-transparent border-0 text-xl font-light dark:text-zinc-50"
     />
   );
 };

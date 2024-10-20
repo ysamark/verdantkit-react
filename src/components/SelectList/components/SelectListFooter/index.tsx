@@ -68,7 +68,7 @@ export const SelectListFooter = () => {
       <div className="flex flex-row gap-3">
         <button
           type="button"
-          className="px-3 py-2 rounded-lg border-0 outline-none bg-zinc-200 hover:bg-zinc-300 active:bg-zinc-400 dark:bg-zinc-900 dark:hover:bg-zinc-950 dark:active:bg-black text-zinc-50"
+          className="px-3 py-2 rounded-lg border-0 outline-none bg-zinc-200 hover:bg-zinc-300 active:bg-zinc-400 dark:bg-zinc-900 dark:hover:bg-zinc-950 dark:active:bg-black text-zinc-800 dark:text-zinc-50"
           title="Selecionar todos"
           onClick={selectAllButtonClickHandler}
         >

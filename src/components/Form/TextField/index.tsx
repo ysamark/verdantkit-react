@@ -11,6 +11,10 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       <div className="relative">
         <input
           type="text"
+          autoComplete="off"
+          autoCapitalize="off"
+          autoCorrect="off"
+          spellCheck={false}
           {...props}
           ref={ref}
           placeholder={props.label ?? ""}

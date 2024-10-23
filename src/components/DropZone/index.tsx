@@ -4,6 +4,8 @@ import { DropZoneContextProvider } from "./context";
 import { useDropZoneDataObject } from "./hooks/useDropZoneDataObject";
 import { DropZoneComponent } from "./types";
 
+export * from "./types";
+
 export const DropZone: DropZoneComponent = (props) => {
   const dropZoneContextDataObject = useDropZoneDataObject(props);
 

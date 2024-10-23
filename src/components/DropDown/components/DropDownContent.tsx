@@ -116,7 +116,7 @@ export const DropDownContent = forwardRef<
     <div
       {...props}
       ref={divRef}
-      className={cn(props.className, "fixed z-[50] flex flex-col max-w-[96%]")}
+      className={cn(props.className, "fixed z-[50] flex max-w-[96%]")}
     >
       <i
         className="w-3 block fixed border-solid border-[16px]"

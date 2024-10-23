@@ -105,5 +105,5 @@ export default {
       },
     },
   },
-  plugins: [verdant()],
+  plugins: [verdant(), require("@tailwindcss/typography")],
 };

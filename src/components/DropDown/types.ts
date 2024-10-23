@@ -7,6 +7,7 @@ export type DropDownContextDataObject = {
   show: boolean;
   setShow: StateSetter<boolean>;
   buttonElementRef: React.RefObject<HTMLButtonElement>;
+  close: () => void;
   toggle: () => void;
 };
 

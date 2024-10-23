@@ -3,6 +3,8 @@ import React, { isValidElement } from "react";
 
 export * from "./clickDoneOutOf";
 export * from "./colors";
+export * from "./drillAdditionalPropsToFirstChild";
+export * from "./mapArrayRev";
 
 export const cn = (...args: Array<Nullish>) => {
   const classList: Array<string> = [];

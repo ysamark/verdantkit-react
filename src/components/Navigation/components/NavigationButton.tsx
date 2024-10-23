@@ -1,10 +1,12 @@
 import { forwardRef } from "react";
 
 import { useNavigation } from "@components/Navigation/hooks/useNavigation";
+import { drillAdditionalPropsToFirstChild } from "~/utils";
 
 type NavigationButtonProps = React.PropsWithChildren<
   React.ButtonHTMLAttributes<HTMLButtonElement> & {
     to: NavigationButtonTarget;
+    asChild?: boolean;
   }
 >;
 
@@ -13,7 +15,7 @@ type NavigationButtonTarget = ":back" | ":forward" | ":home" | ":void" | string;
 export const NavigationButton = forwardRef<
   HTMLButtonElement,
   NavigationButtonProps
->(function NavigationButton({ to, ...props }, ref) {
+>(function NavigationButton({ to, asChild, ...props }, ref) {
   const context = useNavigation();
 
   if (typeof context.isCurrentScreen !== "function") {
@@ -55,6 +57,21 @@ export const NavigationButton = forwardRef<
       props.onClick(event);
     }
   };
+
+  if (asChild) {
+    const [child] = drillAdditionalPropsToFirstChild({
+      children: props.children,
+      props: {
+        ref: ref,
+        type: "button",
+        role: "button",
+        disabled: disabled,
+        onClick: buttonClickHandler,
+      },
+    });
+
+    return [child];
+  }
 
   return (
     <button

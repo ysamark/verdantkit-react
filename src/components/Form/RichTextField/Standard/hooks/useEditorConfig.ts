@@ -1,0 +1,77 @@
+import TipTapColorExtension, { Color } from "@tiptap/extension-color";
+import TipTapDropCursorExtension from "@tiptap/extension-dropcursor";
+import TipTapFloatingMenuExtension from "@tiptap/extension-floating-menu";
+import TipTapFontFamilyExtension from "@tiptap/extension-font-family";
+import TipTapHighlightExtension from "@tiptap/extension-highlight";
+import TipTapImageExtension from "@tiptap/extension-image";
+import TipTapLinkExtension from "@tiptap/extension-link";
+import TipTapTableExtension from "@tiptap/extension-table";
+import TipTapTableCellExtension from "@tiptap/extension-table-cell";
+import TipTapTableHeaderExtension from "@tiptap/extension-table-header";
+import TipTapTableRowExtension from "@tiptap/extension-table-row";
+import TipTapTaskItemExtension from "@tiptap/extension-task-item";
+import TipTapTaskListExtension from "@tiptap/extension-task-list";
+import TipTapTextExtension from "@tiptap/extension-text";
+import TipTapTextAlignExtension from "@tiptap/extension-text-align";
+import TipTapTextStyleExtension from "@tiptap/extension-text-style";
+import TipTapUnderlineExtension from "@tiptap/extension-underline";
+import { useEditor } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import TipTapFontSizeExtension from "tiptap-extension-font-size";
+
+export const useEditorConfig = () => {
+  const editor = useEditor({
+    extensions: [
+      StarterKit.configure({
+        heading: {
+          levels: [1, 2, 3, 4, 5, 6],
+        },
+      }),
+      TipTapTextAlignExtension.configure({
+        types: ["heading", "paragraph", "image"],
+      }),
+      TipTapLinkExtension.configure({
+        autolink: true,
+        linkOnPaste: true,
+        openOnClick: false,
+        defaultProtocol: "https",
+        protocols: [
+          "ftp",
+          {
+            scheme: "tel",
+            optionalSlashes: true,
+          },
+          {
+            scheme: "mailto",
+            optionalSlashes: true,
+          },
+        ],
+      }),
+      TipTapColorExtension,
+      TipTapTaskListExtension,
+      TipTapTaskItemExtension,
+      TipTapFontSizeExtension,
+      TipTapUnderlineExtension,
+      TipTapTextStyleExtension,
+      TipTapFloatingMenuExtension,
+      TipTapFontFamilyExtension,
+      TipTapTableExtension.configure({
+        resizable: true,
+        allowTableNodeSelection: true,
+      }),
+      TipTapTableRowExtension,
+      TipTapTableCellExtension,
+      TipTapTableHeaderExtension,
+      TipTapDropCursorExtension,
+      TipTapHighlightExtension.configure({
+        multicolor: true,
+      }),
+      TipTapImageExtension,
+      TipTapTextExtension,
+      Color,
+    ],
+    content: "<p>Hello World! 🌎️</p>",
+  });
+
+  return editor;
+};

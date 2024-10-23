@@ -8,10 +8,10 @@ import { resolveCheckBoxSizes, resolveInputType } from "./utils";
 
 type CheckBoxComponent = React.FunctionComponent<CheckBoxProps>;
 
-export const CheckBox: CheckBoxComponent = (props) => {
+export const CheckBox: CheckBoxComponent = ({ size, ...props }) => {
   const fieldId = noEmpty(props.id) ? props.id : generateRandomId();
 
-  const { width, height } = resolveCheckBoxSizes(props.size);
+  const { width, height } = resolveCheckBoxSizes(size);
 
   return (
     <label

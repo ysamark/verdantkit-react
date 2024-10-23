@@ -1,4 +1,5 @@
-import { createContext } from "react";
+import { createContext, memo } from "react";
+
 import { useNavigationContextDataObject } from "./hooks";
 import { NavigationContextDataObject, NavigationProps } from "./types";
 
@@ -9,10 +10,9 @@ export const NavigationContext = createContext<NavigationContextDataObject>(
 type NavigationContextProviderComponent =
   React.FunctionComponent<NavigationProps>;
 
-export const NavigationContextProvider: NavigationContextProviderComponent = (
-  props
-) => {
-  const context = useNavigationContextDataObject(props);
+export const NavigationContextProvider: NavigationContextProviderComponent =
+  memo((props) => {
+    const context = useNavigationContextDataObject(props);
 
-  return <NavigationContext.Provider {...props} value={context} />;
-};
+    return <NavigationContext.Provider {...props} value={context} />;
+  });

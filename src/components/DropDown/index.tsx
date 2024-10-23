@@ -6,6 +6,7 @@ import { DropDownProps } from "./types";
 type DropDownComponent = React.FunctionComponent<DropDownProps>;
 
 export * from "./components";
+export * from "./hooks/useDropDown";
 export * from "./types";
 
 export const DropDown: DropDownComponent = (props) => {

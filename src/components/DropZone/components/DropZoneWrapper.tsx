@@ -45,7 +45,6 @@ export const DropZoneWrapper = () => {
     <Fragment>
       <div className="w-full relative h-auto block">
         <ReactDropZone
-          maxFiles={1}
           {...context.props}
           onDrop={reactDropZoneDropHandler}
           onDropAccepted={reactDropZoneDropAcceptedHandler}

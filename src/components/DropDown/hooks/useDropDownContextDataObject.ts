@@ -24,5 +24,8 @@ export const useDropDownContextDataObject: UseDropDownContextDataObjectHook = (
     toggle() {
       setShow(!show);
     },
+    close() {
+      setShow(false);
+    },
   };
 };

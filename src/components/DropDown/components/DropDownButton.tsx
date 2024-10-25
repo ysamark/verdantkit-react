@@ -2,7 +2,7 @@ import React, { forwardRef, useImperativeHandle } from "react";
 
 import { useDropDown } from "@components/DropDown/hooks";
 
-type DropDownButtonProps = React.PropsWithChildren<
+export type DropDownButtonProps = React.PropsWithChildren<
   React.ButtonHTMLAttributes<HTMLButtonElement> & {
     asChild?: boolean;
   }
@@ -11,7 +11,7 @@ type DropDownButtonProps = React.PropsWithChildren<
 export const DropDownButton = forwardRef<
   HTMLButtonElement,
   DropDownButtonProps
->(function DropDownButton({ asChild, ...props }, ref) {
+>(function DropDownButton({ asChild, children, ...props }, ref) {
   const context = useDropDown();
 
   const buttonClickHandler = () => {
@@ -25,7 +25,7 @@ export const DropDownButton = forwardRef<
   });
 
   if (asChild) {
-    const [child] = React.Children.toArray(props.children);
+    const [child] = React.Children.toArray(children);
 
     if (React.isValidElement(child)) {
       const childProps =
@@ -36,7 +36,7 @@ export const DropDownButton = forwardRef<
         props: {
           ...childProps,
           ...props,
-          ref,
+          ref: context.buttonElementRef,
           onClick: buttonClickHandler,
         },
       };
@@ -52,6 +52,8 @@ export const DropDownButton = forwardRef<
       role="button"
       ref={context.buttonElementRef}
       onClick={buttonClickHandler}
-    />
+    >
+      {children}
+    </button>
   );
 });
